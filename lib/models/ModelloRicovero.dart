@@ -1,79 +1,79 @@
-package com.example.prgettobasijava.Modelli;
+class ModelloRicovero {
+  int id;
 
-import java.time.LocalDate;
+  int idOspedale;
 
- class ModelloRicovero {
+  String codicesanitariopaziente;
 
-     int id;
+  LocalDate dataricovero;
 
-      int idOspedale;
+  LocalDate datarilascio;
 
-      String codicesanitariopaziente;
+  ModelloRicovero(int Id, int IdOspedale, String Codicesanitariopaziente,
+      LocalDate Dataricovero, LocalDate Datarilascio) {
+    id = Id;
+    idOspedale = IdOspedale;
+    codicesanitariopaziente = Codicesanitariopaziente;
+    dataricovero = Dataricovero;
+    datarilascio = Datarilascio;
+  }
 
-      LocalDate dataricovero;
+  ModelloRicovero() {}
 
-      LocalDate datarilascio;
+  @Override
+  String toString() {
+    return "ModelloRicoveri{" +
+        "id=" +
+        id +
+        ", idOspedale=" +
+        idOspedale +
+        ", codicesanitariopaziente='" +
+        codicesanitariopaziente +
+        '\'' +
+        ", dataricovero=" +
+        dataricovero +
+        ", datarilascio=" +
+        datarilascio +
+        '}';
+  }
 
-     ModelloRicovero(int Id, int IdOspedale, String Codicesanitariopaziente, LocalDate Dataricovero, LocalDate Datarilascio){
-        id = Id;
-        idOspedale = IdOspedale;
-        codicesanitariopaziente = Codicesanitariopaziente;
-        dataricovero = Dataricovero;
-        datarilascio = Datarilascio;
-    }
+  int getId() {
+    return id;
+  }
 
-     ModelloRicovero(){
+  void setId(int id) {
+    this.id = id;
+  }
 
-    }
+  int getIdOspedale() {
+    return idOspedale;
+  }
 
-    @Override
-     String toString() {
-        return "ModelloRicoveri{" +
-                "id=" + id +
-                ", idOspedale=" + idOspedale +
-                ", codicesanitariopaziente='" + codicesanitariopaziente + '\'' +
-                ", dataricovero=" + dataricovero +
-                ", datarilascio=" + datarilascio +
-                '}';
-    }
+  void setIdOspedale(int idOspedale) {
+    this.idOspedale = idOspedale;
+  }
 
-     int getId() {
-        return id;
-    }
+  String getCodicesanitariopaziente() {
+    return codicesanitariopaziente;
+  }
 
-     void setId(int id) {
-        this.id = id;
-    }
+  void setCodicesanitariopaziente(String codicesanitariopaziente) {
+    this.codicesanitariopaziente = codicesanitariopaziente;
+  }
 
-      int getIdOspedale() {
-        return idOspedale;
-    }
+  LocalDate getDataricovero() {
+    return dataricovero;
+  }
 
-     void setIdOspedale(int idOspedale) {
-        this.idOspedale = idOspedale;
-    }
+  void setDataricovero(LocalDate dataricovero) {
+    this.dataricovero = dataricovero;
+  }
 
-      String getCodicesanitariopaziente() {
-        return codicesanitariopaziente;
-    }
+  LocalDate getDatarilascio() {
+    return datarilascio;
+  }
 
-     void setCodicesanitariopaziente(String codicesanitariopaziente) {
-        this.codicesanitariopaziente = codicesanitariopaziente;
-    }
-
-      LocalDate getDataricovero() {
-        return dataricovero;
-    }
-
-     void setDataricovero(LocalDate dataricovero) {
-        this.dataricovero = dataricovero;
-    }
-
-      LocalDate getDatarilascio() {
-        return datarilascio;
-    }
-
-     void setDatarilascio(LocalDate datarilascio) {
-        this.datarilascio = datarilascio;
-    }
+  void setDatarilascio(LocalDate datarilascio) {
+    this.datarilascio = datarilascio;
+  }
 }

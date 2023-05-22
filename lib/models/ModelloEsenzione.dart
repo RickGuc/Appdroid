@@ -1,41 +1,40 @@
-package com.example.prgettobasijava.Modelli;
+class ModelloEsenzione {
+  String esenzione;
 
- class ModelloEsenzione {
+  String nomeesame;
 
-      String esenzione;
+  ModelloEsenzione(String Esenzione, String NomeEsame) {
+    esenzione = Esenzione;
+    nomeesame = NomeEsame;
+  }
 
-      String nomeesame;
+  ModelloEsenzione() {}
 
-     ModelloEsenzione(String Esenzione, String NomeEsame){
-        esenzione = Esenzione;
-        nomeesame = NomeEsame;
-    }
+  @Override
+  String toString() {
+    return "ModelloEsenzione{" +
+        "esenzione='" +
+        esenzione +
+        '\'' +
+        ", nomeesame='" +
+        nomeesame +
+        '\'' +
+        '}';
+  }
 
-     ModelloEsenzione(){
+  String getEsenzione() {
+    return esenzione;
+  }
 
-    }
+  void setEsenzione(String esenzione) {
+    this.esenzione = esenzione;
+  }
 
-    @Override
-     String toString() {
-        return "ModelloEsenzione{" +
-                "esenzione='" + esenzione + '\'' +
-                ", nomeesame='" + nomeesame + '\'' +
-                '}';
-    }
+  String getNomeesame() {
+    return nomeesame;
+  }
 
-      String getEsenzione() {
-        return esenzione;
-    }
-
-     void setEsenzione(String esenzione) {
-        this.esenzione = esenzione;
-    }
-
-      String getNomeesame() {
-        return nomeesame;
-    }
-
-     void setNomeesame(String nomeesame) {
-        this.nomeesame = nomeesame;
-    }
+  void setNomeesame(String nomeesame) {
+    this.nomeesame = nomeesame;
+  }
 }

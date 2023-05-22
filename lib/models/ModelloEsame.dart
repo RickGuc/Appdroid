@@ -1,116 +1,148 @@
-package com.example.prgettobasijava.Modelli;
+import
+java.time.LocalTime;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+class ModelloEsame {
 
- class ModelloEsame {
+  int id;
 
-      int id;
+  String nomeesame;
 
-      String nomeesame;
+  LocalDate data;
 
-      LocalDate data;
+  LocalTime ora;
 
-      LocalTime ora;
+  String codicesanitariopaziente;
 
-      String codicesanitariopaziente;
+  int idpatologia;
 
-      int idpatologia;
+  String operatoresanitario;
 
-      String operatoresanitario;
+  int idospedale;
 
-      int idospedale;
+  ModelloEsame(int Id, String NomeEsame, LocalDate Data, LocalTime Ora,
+      String Codicesanitariopaziente, int Idpatologia,
+      String Operatoresanitario, int Idospedale) {
+    id = Id;
+    nomeesame = NomeEsame;
+    data = Data;
+    ora = Ora;
+    codicesanitariopaziente = Codicesanitariopaziente;
+    idpatologia = Idpatologia;
+    operatoresanitario = Operatoresanitario;
+    idospedale = Idospedale;
+  }
 
-     ModelloEsame(int Id, String NomeEsame, LocalDate Data, LocalTime Ora, String Codicesanitariopaziente, int Idpatologia, String Operatoresanitario, int Idospedale){
-        id = Id;
-        nomeesame = NomeEsame;
-        data = Data;
-        ora = Ora;
-        codicesanitariopaziente = Codicesanitariopaziente;
-        idpatologia = Idpatologia;
-        operatoresanitario = Operatoresanitario;
-        idospedale = Idospedale;
-    }
+  ModelloEsame() {
 
-     ModelloEsame(){
+  }
 
-    }
+  @Override
+  String toString() {
+    return "ModelloEsame{" +
+        "id=" + id +
+        ", nomeesame='" + nomeesame + '\'' +
+        ", data=" + data +
+        ", ora=" + ora +
+        ", codicesanitariopaziente='" + codicesanitariopaziente + '\'' +
+        ", idpatologia=" + idpatologia +
+        ", operatoresanitario='" + operatoresanitario + '\'' +
+        ", idospedale=" + idospedale +
+        '}';
+  }
 
-    @Override
-     String toString() {
-        return "ModelloEsame{" +
-                "id=" + id +
-                ", nomeesame='" + nomeesame + '\'' +
-                ", data=" + data +
-                ", ora=" + ora +
-                ", codicesanitariopaziente='" + codicesanitariopaziente + '\'' +
-                ", idpatologia=" + idpatologia +
-                ", operatoresanitario='" + operatoresanitario + '\'' +
-                ", idospedale=" + idospedale +
-                '}';
-    }
+  public int
 
-    public  int getId() {
-        return id;
-    }
+  getId() {
+    return id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public
 
-    public  String getNomeesame() {
-        return nomeesame;
-    }
+  void setId(int id) {
+    this.id = id;
+  }
 
-    public void setNomeesame(String nomeesame) {
-        this.nomeesame = nomeesame;
-    }
+  public String
 
-    public  LocalDate getData() {
-        return data;
-    }
+  getNomeesame() {
+    return nomeesame;
+  }
 
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
+  public
 
-    public  LocalTime getOra() {
-        return ora;
-    }
+  void setNomeesame(String nomeesame) {
+    this.nomeesame = nomeesame;
+  }
 
-    public void setOra(LocalTime ora) {
-        this.ora = ora;
-    }
+  public LocalDate
 
-    public  String getCodicesanitariopaziente() {
-        return codicesanitariopaziente;
-    }
+  getData() {
+    return data;
+  }
 
-    public void setCodicesanitariopaziente(String codicesanitariopaziente) {
-        this.codicesanitariopaziente = codicesanitariopaziente;
-    }
+  public
 
-    public  int getIdpatologia() {
-        return idpatologia;
-    }
+  void setData(LocalDate data) {
+    this.data = data;
+  }
 
-    public void setIdpatologia(int idpatologia) {
-        this.idpatologia = idpatologia;
-    }
+  public LocalTime
 
-    public  String getOperatoresanitario() {
-        return operatoresanitario;
-    }
+  getOra() {
+    return ora;
+  }
 
-    public void setOperatoresanitario(String operatoresanitario) {
-        this.operatoresanitario = operatoresanitario;
-    }
+  public
 
-    public  int getIdospedale() {
-        return idospedale;
-    }
+  void setOra(LocalTime ora) {
+    this.ora = ora;
+  }
 
-    public void setIdospedale(int idospedale) {
-        this.idospedale = idospedale;
-    }
+  public String
+
+  getCodicesanitariopaziente() {
+    return codicesanitariopaziente;
+  }
+
+  public
+
+  void setCodicesanitariopaziente(String codicesanitariopaziente) {
+    this.codicesanitariopaziente = codicesanitariopaziente;
+  }
+
+  public int
+
+  getIdpatologia() {
+    return idpatologia;
+  }
+
+  public
+
+  void setIdpatologia(int idpatologia) {
+    this.idpatologia = idpatologia;
+  }
+
+  public String
+
+  getOperatoresanitario() {
+    return operatoresanitario;
+  }
+
+  public
+
+  void setOperatoresanitario(String operatoresanitario) {
+    this.operatoresanitario = operatoresanitario;
+  }
+
+  public int
+
+  getIdospedale() {
+    return idospedale;
+  }
+
+  public
+
+  void setIdospedale(int idospedale) {
+    this.idospedale = idospedale;
+  }
 }

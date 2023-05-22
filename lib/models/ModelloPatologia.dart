@@ -1,68 +1,83 @@
-package com.example.prgettobasijava.Modelli;
+class ModelloPatologia {
 
-import java.time.LocalDate;
+  int id;
 
- class ModelloPatologia {
+  String patologia;
 
-      int id;
+  String codicesanitario;
 
-      String patologia;
-
-      String codicesanitario;
-
-      LocalDate datarilevazione;
+  LocalDate datarilevazione;
 
 
-     ModelloPatologia(int Id, String Patologia, String Codicesanitario, LocalDate Datarilevazione){
-        id = Id;
-        patologia = Patologia;
-        codicesanitario = Codicesanitario;
-        datarilevazione = Datarilevazione;
-    }
+  ModelloPatologia(int Id, String Patologia, String Codicesanitario,
+      LocalDate Datarilevazione) {
+    id = Id;
+    patologia = Patologia;
+    codicesanitario = Codicesanitario;
+    datarilevazione = Datarilevazione;
+  }
 
-     ModelloPatologia(){
+  ModelloPatologia() {
 
-    }
+  }
 
-    @Override
-    public String toString() {
-        return "ModelloPatologie{" +
-                "id=" + id +
-                ", patologia='" + patologia + '\'' +
-                ", codicesanitario='" + codicesanitario + '\'' +
-                ", datarilevazione=" + datarilevazione +
-                '}';
-    }
+  @Override
+  public String
 
-    public  int getId() {
-        return id;
-    }
+  toString() {
+    return "ModelloPatologie{" +
+        "id=" + id +
+        ", patologia='" + patologia + '\'' +
+        ", codicesanitario='" + codicesanitario + '\'' +
+        ", datarilevazione=" + datarilevazione +
+        '}';
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int
 
-    public  String getPatologia() {
-        return patologia;
-    }
+  getId() {
+    return id;
+  }
 
-    public void setPatologia(String patologia) {
-        this.patologia = patologia;
-    }
+  public
 
-    public  String getCodicesanitario() {
-        return codicesanitario;
-    }
+  void setId(int id) {
+    this.id = id;
+  }
 
-    public void setCodicesanitario(String codicesanitario) {
-        this.codicesanitario = codicesanitario;
-    }
+  public String
 
-    public  LocalDate getDatarilevazione() {
-        return datarilevazione;
-    }
+  getPatologia() {
+    return patologia;
+  }
 
-    public void setDatarilevazione(LocalDate datarilevazione) {
-        this.datarilevazione = datarilevazione;
-    }
+  public
+
+  void setPatologia(String patologia) {
+    this.patologia = patologia;
+  }
+
+  public String
+
+  getCodicesanitario() {
+    return codicesanitario;
+  }
+
+  public
+
+  void setCodicesanitario(String codicesanitario) {
+    this.codicesanitario = codicesanitario;
+  }
+
+  public LocalDate
+
+  getDatarilevazione() {
+    return datarilevazione;
+  }
+
+  public
+
+  void setDatarilevazione(LocalDate datarilevazione) {
+    this.datarilevazione = datarilevazione;
+  }
 }

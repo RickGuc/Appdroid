@@ -1,89 +1,93 @@
-package com.example.prgettobasijava.Modelli;
+class ModelloOspedale {
 
- class ModelloOspedale {
+  int id;
 
-     int id;
+  String nome;
 
-      String nome;
+  String citt
 
-      String città;
+  à;
 
-      String via;
+  String via;
 
-      String numero;
+  String numero;
 
-      String nt;
+  String nt;
 
-     ModelloOspedale( int Id, String Nome, String Città, String Via, String Numero, String Nt){
-        id = Id;
-        nome = Nome;
-        città = Città;
-        via = Via;
-        numero = Numero;
-        nt = Nt;
-    }
+  ModelloOspedale
 
-     ModelloOspedale() {
+  (
 
-    }
+  int Id, String Nome, String Città, String Via, String Numero, String Nt){
+  id = Id;
+  nome = Nome;
+  città = Città;
+  via = Via;
+  numero = Numero;
+  nt = Nt;
+  }
 
-    @Override
-     String toString() {
-        return "ModelloOspedale{" +
-               // "id=" + id +//
-                ", nome='" + nome + '\'' +
-                ", città='" + città + '\'' +
-                ", via='" + via + '\'' +
-                ", numero='" + numero + '\'' +
-                ", nt=" + nt +
-                '}';
-    }
+  ModelloOspedale() {
 
-     int getId() {
-        return id;
-    }
+  }
 
-     void setId(int id) {
-        this.id = id;
-    }
+  @Override
+  String toString() {
+  return "ModelloOspedale{" +
+  // "id=" + id +//
+  ", nome='" + nome + '\'' +
+  ", città='" + città + '\'' +
+  ", via='" + via + '\'' +
+  ", numero='" + numero + '\'' +
+  ", nt=" + nt +
+  '}';
+  }
 
-      String getNome() {
-        return nome;
-    }
+  int getId() {
+  return id;
+  }
 
-     void setNome(String nome) {
-        this.nome = nome;
-    }
+  void setId(int id) {
+  this.id = id;
+  }
 
-      String getCittà() {
-        return città;
-    }
+  String getNome() {
+  return nome;
+  }
 
-     void setCittà(String città) {
-        this.città = città;
-    }
+  void setNome(String nome) {
+  this.nome = nome;
+  }
 
-      String getVia() {
-        return via;
-    }
+  String getCittà() {
+  return città;
+  }
 
-     void setVia(String via) {
-        this.via = via;
-    }
+  void setCittà(String città) {
+  this.città = città;
+  }
 
-      String getNumero() {
-        return numero;
-    }
+  String getVia() {
+  return via;
+  }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
+  void setVia(String via) {
+  this.via = via;
+  }
 
-    public  String getNt() {
-        return nt;
-    }
+  String getNumero() {
+  return numero;
+  }
 
-    public void String (String nt) {
-        this.nt = nt;
-    }
+  public void setNumero(String numero) {
+  this.numero = numero;
+  }
+
+  public String getNt() {
+  return nt;
+  }
+
+  public void String (String nt) {
+  this.nt = nt;
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:cartella_clinica/models/ModelloPaziente.dart';
 import 'package:sqflite/sqflite.dart';
 
 const COLONNA_PAZIENTE = "PAZIENTE";
@@ -93,8 +94,7 @@ class Persistence {
   }
 
 
-  bool addOne(ModelloPaziente modelloPaziente) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addPaziente(ModelloPaziente modelloPaziente) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_NOME, modelloPaziente.getNome());
@@ -107,7 +107,7 @@ class Persistence {
     cv.put(COLONNA_NUMERO, modelloPaziente.getNumero());
     cv.put(COLONNA_GENERE, modelloPaziente.getGenere());
 
-    int insert = db.insert(TABELLA_PAZIENTE, null, cv);
+    int insert = await _database.insert(TABELLA_PAZIENTE, null, cv);
     if (insert == -1)
     return false;
     else {
@@ -118,20 +118,19 @@ class Persistence {
 
   }
 
-  bool addOne(ModelloDescrTerapia modelloDescrTerapia) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addDescrTerapia(ModelloDescrTerapia modelloDescrTerapia) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_NOME, modelloDescrTerapia.getNome());
     cv.put(COLONNA_DOSAGGIO, modelloDescrTerapia.getDosaggio());
     cv.put(COLONNA_VOLTE_A_SETTIMANA, ModelloDescrTerapia.getVas());
 
-    final insert = db.insert(TABELLA_DESCRIZIONE_TERAPIE, null, cv);
+    final insert = await _database.insert(
+        TABELLA_DESCRIZIONE_TERAPIE, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloOspedale modelloOspedale) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addOspedale(ModelloOspedale modelloOspedale) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_NOME, ModelloOspedale.getNome());
@@ -140,18 +139,11 @@ class Persistence {
     cv.put(COLONNA_NUMERO, ModelloOspedale.getNumero());
     cv.put(COLONNA_NUMERODITELEFONO, ModelloOspedale.getNt());
 
-    final insert = db.insert(TABELLA_OSPEDALI, null, cv);
-    if (insert == -1)
-    return false;
-    else {
-
-    return true;
-    }
-
+    final insert = await _database.insert(TABELLA_OSPEDALI, null, cv);
+    return insert == -1;
   }
 
-  bool addOne(ModelloPatologia modelloPatologia) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addPatologia(ModelloPatologia modelloPatologia) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_NOME, ModelloPatologia.getPatologia());
@@ -159,12 +151,11 @@ class Persistence {
     cv.put(COLONNA_DATA_RILEVAZIONE,
         ModelloPatologia.getDatarilevazione().toString());
 
-    final insert = db.insert(TABELLA_OSPEDALI, null, cv);
+    final insert = await _database.insert(TABELLA_OSPEDALI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloRicovero modelloRicovero) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addRicovero(ModelloRicovero modelloRicovero) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_OSPEDALE, ModelloRicovero.getIdOspedale());
@@ -172,12 +163,11 @@ class Persistence {
     cv.put(COLONNA_DATA_RICOVERO, ModelloRicovero.getDataricovero().toString());
     cv.put(COLONNA_DATA_RILASCIO, ModelloRicovero.getDatarilascio().toString());
 
-    final insert = db.insert(TABELLA_RICOVERI, null, cv);
+    final insert = await _database.insert(TABELLA_RICOVERI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloSintomo modelloSintomo) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addSintoma(ModelloSintomo modelloSintomo) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_DESCRIZIONE_SINTOMO, ModelloSintomo.getDescrizionesintomo());
@@ -185,12 +175,11 @@ class Persistence {
     cv.put(COLONNA_DATA_RILEVAZIONE,
         ModelloSintomo.getDatarilevazione().toString());
 
-    final insert = db.insert(TABELLA_SINTOMI, null, cv);
+    final insert = await _database.insert(TABELLA_SINTOMI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloDescrEsame modelloDescrEsame) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addDescrEsame(ModelloDescrEsame modelloDescrEsame) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_NOME, ModelloDescrEsame.getNome());
@@ -198,12 +187,11 @@ class Persistence {
     cv.put(COLONNA_COSTO, ModelloDescrEsame.getCosto());
     cv.put(COLONNA_SPECIALISTA, ModelloDescrEsame.getSpecialista());
 
-    final insert = db.insert(TABELLA_SINTOMI, null, cv);
+    final insert = await _database.insert(TABELLA_SINTOMI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloEsame modelloEsame) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addEsame(ModelloEsame modelloEsame) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_ESAME, ModelloEsame.getNomeesame());
@@ -215,12 +203,11 @@ class Persistence {
         COLONNA_OPERATORE_SANITARIO, ModelloEsame.getCodicesanitariopaziente());
     cv.put(COLONNA_OSPEDALE, ModelloEsame.getIdospedale());
 
-    final insert = db.insert(TABELLA_SINTOMI, null, cv);
+    final insert = await _database.insert(TABELLA_SINTOMI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloTerapia modelloTerapia) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addTerapia(ModelloTerapia modelloTerapia) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_TERAPIA, ModelloTerapia.getNometerapia());
@@ -232,30 +219,29 @@ class Persistence {
     cv.put(COLONNA_DATA_FINE, ModelloTerapia.getDatafine().toString());
     cv.put(COLONNA_NOTE, ModelloTerapia.getNote());
 
-    final insert = db.insert(TABELLA_SINTOMI, null, cv);
+    final insert = await _database.insert(TABELLA_SINTOMI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloEsenzionePaziente modelloEsenzionePaziente) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addEsenzionePaziente(
+      ModelloEsenzionePaziente modelloEsenzionePaziente) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_PAZIENTE,
         ModelloEsenzionePaziente.getCodicesanitariopaziente());
     cv.put(COLONNA_ESENZIONE, ModelloEsenzionePaziente.getEsenzione());
 
-    final insert = db.insert(TABELLA_SINTOMI, null, cv);
+    final insert = await _database.insert(TABELLA_SINTOMI, null, cv);
     return insert == -1;
   }
 
-  bool addOne(ModelloEsenzione modelloEsenzione) {
-    SQLiteDatabase db = this.getWritableDatabase();
+  Future<bool> addEsenzione(ModelloEsenzione modelloEsenzione) async {
     ContentValues cv = new ContentValues();
 
     cv.put(COLONNA_ESENZIONE, ModelloEsenzione.getEsenzione());
     cv.put(COLONNA_ESAME, ModelloEsenzione.getNomeesame());
 
-    final insert = db.insert(TABELLA_SINTOMI, null, cv);
+    final insert = await _database.insert(TABELLA_SINTOMI, null, cv);
     return insert == -1;
   }
 }
